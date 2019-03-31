@@ -13,6 +13,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
@@ -49,6 +51,7 @@ import tech.form3.payment.model.SponsorParty;
 @SpringBootTest
 @ActiveProfiles ("dev")
 @AutoConfigureMockMvc
+@EnableAutoConfiguration (exclude = HibernateJpaAutoConfiguration.class)
 @DirtiesContext (classMode = ClassMode.AFTER_EACH_TEST_METHOD)
 public class PaymentResourceIntegrationStubTest {
 

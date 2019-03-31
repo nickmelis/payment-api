@@ -17,3 +17,19 @@ Once the application JAR has been built, it can be run by doing
 java -jar payment-api-0.0.1-SNAPSHOT.jar
 ```
 in the console, in the folder where the jar is.
+
+### Database configuration
+The application tries to connect by default to a MySql database on `localhost:3306` and looks for the schema `form3`
+The JDBC connection string is defined in `application.properties`, together with username and password, hence if you need different credentials you can change them in the file. 
+However this configuration can be overridden at runtime too, by passing the following command line arguments:
+```
+spring.datasource.url = jdbc:mysql://<HOST>:<PORT>/<SCHEMA_NAME>
+spring.datasource.username = <USERNAME>
+spring.datasource.password = <PASSWORD>
+```
+
+For example:
+
+```bash
+java -jar payment-api-0.0.1-SNAPSHOT.jar --spring.datasource.url=jdbc:mysql://localhost:3306/form3?useSSL=false --spring.datasource.username=root --spring.datasource.password=passw0rd
+```
