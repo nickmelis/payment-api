@@ -23,13 +23,20 @@ The application tries to connect by default to a MySql database on `localhost:33
 The JDBC connection string is defined in `application.properties`, together with username and password, hence if you need different credentials you can change them in the file. 
 However this configuration can be overridden at runtime too, by passing the following command line arguments:
 ```
-spring.datasource.url = jdbc:mysql://<HOST>:<PORT>/<SCHEMA_NAME>
-spring.datasource.username = <USERNAME>
-spring.datasource.password = <PASSWORD>
+--spring.datasource.url = jdbc:mysql://<HOST>:<PORT>/<SCHEMA_NAME>
+--spring.datasource.username = <USERNAME>
+--spring.datasource.password = <PASSWORD>
 ```
 
-For example:
+For example, passing the parameters as command line arguments:
 
 ```bash
 java -jar payment-api-0.0.1-SNAPSHOT.jar --spring.datasource.url=jdbc:mysql://localhost:3306/form3?useSSL=false --spring.datasource.username=root --spring.datasource.password=passw0rd
 ```
+
+or passing the parameters as JVM arguments:
+
+```bash
+java -Dspring.datasource.url=jdbc:mysql://localhost:3306/form3?useSSL=false -Dspring.datasource.username=root -Dspring.datasource.password=passw0rd -jar payment-api-0.0.1-SNAPSHOT.jar 
+```
+
