@@ -1,6 +1,6 @@
-# Payment API
+# Spring Boot API sample application
 
-This is a Java application based on the Spring Boot framework. It exposes a RESTful API that allows basic CRUD operations over payments.
+This is a Java application based on the Spring Boot framework. It exposes a RESTful API that allows basic CRUD operations over objects of type payment.
 It has support for MySql database, although it can support any database for which a JDBC driver is available.
 
 ### Build
