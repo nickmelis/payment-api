@@ -3,6 +3,9 @@
 This is a Java application based on the Spring Boot framework. It exposes a RESTful API that allows basic CRUD operations over objects of type payment.
 It has support for MySql database, although it can support any database for which a JDBC driver is available.
 
+![Build](https://github.com/nickmelis/payment-api/workflows/Build/badge.svg)
+
+
 ### Build
 The application uses Gradle as dependency manager. Gradle version 5 or above is recommended, as the application has not been tested with previous versions.
 In order to build an executable jar it's enough to do 
